@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    type: org.apache.tomcat.jdbc.pool.DataSource
+    username: root
+    password: Windows8
+    url: jdbc:mysql://49.234.60.118:3306/thc_rcm?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver‐class‐name: com.mysql.cj.jdbc.Driver
+    tomcat:
+      max-wait: 2
+      max-active: 2
+      test-on-borrow: true
+      max-idle: 1
