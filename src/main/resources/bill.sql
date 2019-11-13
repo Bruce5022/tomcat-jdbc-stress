@@ -20,6 +20,7 @@ create table bill_define
 (
 	`id` VARCHAR(64) PRIMARY KEY,
 	`org_id` INT(11) NOT NULL COMMENT '机构ID',
+	`code` VARCHAR(64) NOT NULL COMMENT '票据定义编码',
 	`name` VARCHAR(64) COMMENT '票据名称',
 	`bill_type` INT(1) UNSIGNED COMMENT '票据业务类型: 0:门诊收费 1:住院收费 3:商城收费',
 	`max_code` VARCHAR(64) NOT NULL DEFAULT '' COMMENT '最大票据号，自动生成才赋值',
@@ -232,6 +233,7 @@ DROP TABLE IF EXISTS bill_user_out_record;
 create table bill_user_out_record
 (
 	`id` VARCHAR(64) PRIMARY KEY,
+	`code` VARCHAR(64) NOT NULL COMMENT '用户出库单编码',
 	`org_id` INT(11) NOT NULL COMMENT '机构ID',
 	`bill_id` VARCHAR(64) NOT NULL COMMENT '票据id',
 	`batch_id` VARCHAR(64) NOT NULL COMMENT '批次id',
@@ -255,6 +257,7 @@ DROP TABLE IF EXISTS bill_give_back;
 create table bill_give_back
 (
 	`id` VARCHAR(64) PRIMARY KEY,
+	`code` VARCHAR(64) NOT NULL COMMENT '退回单编码',
 	`org_id` INT(11) NOT NULL COMMENT '机构ID',
 	`bill_id` VARCHAR(64) NOT NULL COMMENT '票据id',
 	`batch_id` VARCHAR(64) NOT NULL COMMENT '批次id',
