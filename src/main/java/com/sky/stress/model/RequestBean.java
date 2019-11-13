@@ -5,6 +5,9 @@ public class RequestBean {
     private Integer updateBy;
     private Integer num;
 
+    private Integer orgId;
+    private String busiCode;
+
     public String getId() {
         return id;
     }
@@ -27,5 +30,21 @@ public class RequestBean {
 
     public void setNum(Integer num) {
         this.num = num;
+    }
+
+    public Integer getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(Integer orgId) {
+        this.orgId = orgId;
+    }
+
+    public String getBusiCode() {
+        return busiCode;
+    }
+
+    public void setBusiCode(String busiCode) {
+        this.busiCode = busiCode;
     }
 }

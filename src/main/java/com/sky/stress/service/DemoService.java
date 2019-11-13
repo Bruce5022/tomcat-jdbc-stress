@@ -10,4 +10,6 @@ public interface DemoService {
     List<Map<String, Object>> getSettleParam();
 
     int updateSettleParam(RequestBean param) throws Exception;
+
+    String getBusiCode(RequestBean param) throws Exception;
 }

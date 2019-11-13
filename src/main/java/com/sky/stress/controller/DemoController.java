@@ -35,4 +35,11 @@ public class DemoController {
         System.out.println("请求参数:" + param + ",结果:" + result);
         return result;
     }
+
+    @PostMapping(value = "/getCode", produces = "application/json;charset=UTF-8")
+    public Object getBusiCode(@RequestBody RequestBean param) throws Exception {
+        String result = demoService.getBusiCode(param);
+        System.out.println("请求参数:" + param + ",结果:" + result);
+        return result;
+    }
 }
