@@ -157,6 +157,22 @@ create table bill_org_real_store
 ) COMMENT '机构票据实际库存表';
 
 
+-- ------------------------------------------------------------------------
+-- ---                      		机构票据历史实际库存表                			-------
+-- ---                         （源自：票据入库表）   				          -------
+-- ------------------------------------------------------------------------
+DROP TABLE IF EXISTS bill_org_real_store_his;
+create table bill_org_real_store_his
+(
+	`id` VARCHAR(64) PRIMARY KEY,
+	`org_id` INT(11) NOT NULL COMMENT '机构ID',
+	`bill_id` VARCHAR(64) NOT NULL COMMENT '票据id',
+	`batch_id` VARCHAR(64) NOT NULL COMMENT '批次id',
+	`source_id` VARCHAR(64) NOT NULL COMMENT '入库记录id',
+	`create_by` VARCHAR(64) NOT NULL COMMENT '发放人id',
+	`create_time` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
+) COMMENT '机构票据历史实际库存表';
+
 
 -- ------------------------------------------------------------------------
 -- ---                      		机构票据出库记录表                			-------
@@ -222,6 +238,24 @@ create table bill_user_real_store
 	`create_by` VARCHAR(64) NOT NULL COMMENT '发放人id',
 	`create_time` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
 ) COMMENT '用户票据实际库存表';
+
+
+-- -------------------------------------------------------------------
+-- ---                      		用户历史票据实际库存表                -------
+-- ---                         （源自：票据入库表）   				     -------
+-- -------------------------------------------------------------------
+DROP TABLE IF EXISTS bill_user_real_store_his;
+create table bill_user_real_store_his
+(
+	`id` VARCHAR(64) PRIMARY KEY,
+	`org_id` INT(11) NOT NULL COMMENT '机构ID',
+	`bill_id` VARCHAR(64) NOT NULL COMMENT '票据id',
+	`batch_id` VARCHAR(64) NOT NULL COMMENT '批次id',
+	`source_id` VARCHAR(64) NOT NULL COMMENT '入库记录id',
+	`owner_id` VARCHAR(64) NOT NULL COMMENT '申领人id',
+	`create_by` VARCHAR(64) NOT NULL COMMENT '发放人id',
+	`create_time` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
+) COMMENT '用户票据历史实际库存表';
 
 
 
